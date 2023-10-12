@@ -1,4 +1,6 @@
 body {
+    min-height: 100vh;
+    margin: 0;
     font-family: Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -8,7 +10,13 @@ body {
     background-color: lemonchiffon;
 }
 
+footer {
+    margin-top: auto;
+    margin-bottom: 2vh;
+}
+
 .calculator-container {
+    margin-top: 20vh;
     width: 260px;
     height: 360px;
     border-radius: 12px;
@@ -16,11 +24,20 @@ body {
 
 .number-display {
     background-color: #505050;
+    color: rgba(255, 255, 255, 0.866);
     text-align: right;
     font-size: 50px;
     padding: 25px 10px 2px 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border: 2px solid black;
+}
+
+.button-container {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 2px solid black;
+    border-top: 1px;
 }
 
 .button-row {
@@ -38,8 +55,12 @@ button {
     font-size: 20px;
 }
 
+button:focus {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.51);
+}
+
 #btn-zero {
-    width: 130px;
+    width: 131px;
     height: 55px;
     border-bottom-left-radius: 10px;
 }
