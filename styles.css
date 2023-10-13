@@ -7,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(65, 197, 226, 0.754);
+    background-image: url("images/CalculatorBackground.png");
+    background-size: contain;
 }
 
 footer {
@@ -24,7 +25,6 @@ footer {
 
 .number-display {
     height: 60px;
-    background-color:#5a5051b8;
     color: rgba(0, 0, 0, 0.734);
     text-align: right;
     font-size: 45px;
@@ -32,7 +32,7 @@ footer {
     padding: 25px 10px 2px 10px;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
-    border: 2px solid black;
+    border: 3px solid rgba(0, 0, 0, 0.614);
     background: rgba(255,255,255,0.65);
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
@@ -41,7 +41,7 @@ footer {
 .button-container {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    border: 2px solid black;
+    border: 3px solid rgba(0, 0, 0, 0.614);
     border-top: 1px;
 }
 
@@ -55,8 +55,8 @@ button {
     height: 55px;
     margin: 0px;
     border: 0.5px solid rgba(0, 0, 0, 0.476);
-    background-color: #d6f89d;
-    color: black;
+    background-color: #9ddd4a ;
+    color: white;
     font-size: 20px;
 }
 
@@ -75,11 +75,11 @@ button:focus {
 }
 
 .top-row {
-    background-color: #8eaeb8af;
+    background-color: #eb3576;
 }
 
 .right-column {
-    background-color: #9be1af;
+    background-color: #1bc2ff;
 }
 
 
