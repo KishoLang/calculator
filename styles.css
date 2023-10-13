@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: lemonchiffon;
+    background-color: rgba(65, 197, 226, 0.754);
 }
 
 footer {
@@ -24,8 +24,8 @@ footer {
 
 .number-display {
     height: 60px;
-    background-color: #505050;
-    color: rgba(255, 255, 255, 0.866);
+    background-color:#5a5051b8;
+    color: rgba(0, 0, 0, 0.734);
     text-align: right;
     font-size: 45px;
     word-wrap: break-word;
@@ -33,6 +33,9 @@ footer {
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     border: 2px solid black;
+    background: rgba(255,255,255,0.65);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
 }
 
 .button-container {
@@ -52,8 +55,8 @@ button {
     height: 55px;
     margin: 0px;
     border: 0.5px solid rgba(0, 0, 0, 0.476);
-    background-color: #5050507d;
-    color: white;
+    background-color: #d6f89d;
+    color: black;
     font-size: 20px;
 }
 
@@ -72,11 +75,11 @@ button:focus {
 }
 
 .top-row {
-    background-color: #505050c6;
+    background-color: #8eaeb8af;
 }
 
 .right-column {
-    background-color: #ff9500;
+    background-color: #9be1af;
 }
 
 
