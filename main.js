@@ -1,10 +1,12 @@
 const inputArr = [];
 let op;
 let opPressed = false;
+let justOperated = false;
 let displayNum;
 
 
 const display = document.querySelector(".number-display");
+const allButtons = document.querySelectorAll("button"); // Only use to lose focus with blur()
 const numberButtons = document.querySelectorAll(".btn-num");
 const operationButtons = document.querySelectorAll(".btn-operation");
 
@@ -12,10 +14,9 @@ const clearBtn = document.getElementById("btn-clear");
 const deleteBtn = document.getElementById("btn-delete");
 const equalBtn = document.getElementById("btn-equal");
 
-
+/* **** FUNCTIONALITY OF CALCULATOR **** */
 
 // Give all num buttons event listeners
-// Store input in variables
 for (let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener("click", () => {
         if (display.textContent === "0" || opPressed) {
@@ -31,24 +32,19 @@ for (let i = 0; i < numberButtons.length; i++) {
 for (let i = 0; i < operationButtons.length; i++) {
     operationButtons[i].addEventListener("click", () => {
         op = operationButtons[i].textContent;
-        if (inputArr.length < 2) {
+        inputArr.push(parseFloat(display.textContent));
+        if (inputArr.length > 1) {
+            operate(inputArr[inputArr.length - 2], inputArr[inputArr.length - 1], op);
+            displayNum = parseFloat(display.textContent);
             inputArr.push(displayNum);
-            console.log(inputArr);
-        } else if (inputArr.length > 1) {
-            operate(inputArr[0], inputArr[1], op);
-            inputArr.splice(0, inputArr.length);
-            inputArr.push(parseFloat(display.textContent));
-            console.table(inputArr);
+            let inp1 = inputArr.splice(0, 2);
+            console.log(inp1);
         }
+        
+        console.table(inputArr);
         opPressed = true;
     })
 }
-
-// [8, 2]
-// Operate
-// Push display value to input arr
-// Splice 0
-// [2, 10]
 
 // Special buttons CLEAR , DELETE, EQUAL
 clearBtn.addEventListener("click", () => {
@@ -70,13 +66,12 @@ deleteBtn.addEventListener("click", () => {
 })
 
 equalBtn.addEventListener("click", () => {
-    inputArr.push(displayNum);
-        if (inputArr.length > 1) {
-            operate(inputArr[0], inputArr[1], op);
-            inputArr.splice(0, inputArr.length);
-            inputArr.push(parseFloat(display.textContent));
-            console.table(inputArr);
-        }
+    inputArr.push(parseFloat(display.textContent));
+    if (inputArr.length > 1) {
+        operate(inputArr[inputArr.length - 2], inputArr[inputArr.length - 1], op);
+        let inp1 = inputArr.splice(0, 2);
+        console.log(inp1);
+    }
     opPressed = true;
 })
 
@@ -121,4 +116,34 @@ function divide(num1, num2) {
 
 function modulo(num1, num2) {
     display.textContent = (num1 % num2).toString();
+}
+
+
+
+/* **** MAKING THINGS INTERACTIVE **** */
+
+
+// Remove focus from all buttons after 2.5 secs 
+for (let i = 0; i < allButtons.length; i++) { 
+    allButtons[i].addEventListener("click", () => {
+        window.setTimeout(() => {
+            allButtons[i].blur();    
+        }, 250)
+        
+        if (Array.from(display.textContent).length > 60) {
+            display.style.fontSize = "45px";
+            display.textContent = "...Really?!";
+        }
+        else if (Array.from(display.textContent).length > 42) {
+            display.style.fontSize = "15px";
+            display.style.paddingBottom = "15px";
+        } else if (Array.from(display.textContent).length > 14) {
+            display.style.fontSize = "20px";
+            display.style.paddingBottom = "10px";
+        } else if (Array.from(display.textContent).length > 9) {
+            display.style.fontSize = "30px";
+        } else {
+            display.style.fontSize = "45px";
+        }
+    });
 }
