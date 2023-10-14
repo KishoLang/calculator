@@ -7,8 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("images/CalculatorBackground.png");
-    background-size: contain;
+    background: linear-gradient(310deg, rgba(27,194,255,1) 0%, rgba(157,221,74,1) 50%, rgba(235,53,118,1) 100%);
 }
 
 footer {
@@ -17,7 +16,7 @@ footer {
 }
 
 #footer-text {
-    background-color: rgba(255, 255, 255, 0.836);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3309698879551821) 80%, rgba(255,255,255,0.8099614845938375) 100%);
     color: black;
     border-radius: 5px;
     padding: 4px;
@@ -41,7 +40,7 @@ footer {
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     border: 3px solid rgba(0, 0, 0, 0.614);
-    background: rgba(255,255,255,0.65);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3309698879551821) 63%, rgba(255,255,255,0.8099614845938375) 100%);
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
 }
