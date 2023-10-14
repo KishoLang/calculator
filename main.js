@@ -126,10 +126,6 @@ function modulo(num1, num2) {
 // Remove focus from all buttons after 2.5 secs 
 for (let i = 0; i < allButtons.length; i++) { 
     allButtons[i].addEventListener("click", () => {
-        window.setTimeout(() => {
-            allButtons[i].blur();    
-        }, 250)
-        
         if (Array.from(display.textContent).length > 60) {
             display.style.fontSize = "45px";
             display.textContent = "...Really?!";
