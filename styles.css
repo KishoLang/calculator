@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(310deg, rgba(27,194,255,1) 0%, rgba(157,221,74,1) 50%, rgba(235,53,118,1) 100%);
+    background-color: rgba(55, 202, 255, 0.777);
 }
 
 footer {
